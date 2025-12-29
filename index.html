@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monika S - AI/ML Student</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .logo span {
+            color: #3498db;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: #3498db;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-card h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Education & Experience */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #3498db;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 45%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content h3 {
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            color: #3498db;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-text, .contact-info {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 60px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+        }
+        
+        /* Project Section */
+        .project-status {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .project-status h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .progress-container {
+            height: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #3498db;
+            width: 60%;
+            border-radius: 5px;
+        }
+        
+        .companies-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .company {
+            background-color: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MONIKA <span>S</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>MONIKA SENTHILKUMAR</h1>
+            <h2>AI/ML Engineering Student</h2>
+            <p>Motivated AI/ML engineering student with a strong interest in machine learning and problem-solving. Actively building foundational skills in Python, C, machine learning, and UI/UX design.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am an undergraduate student pursuing B.Tech in Artificial Intelligence and Machine Learning at Bannari Amman Institute of Technology, with an expected graduation in 2028.</p>
+                    <p>My current CGPA is 7.6 and I have a strong academic background with 91.67% in HSC and 90.6% in SSLC.</p>
+                    <p>I'm passionate about solving problems through programming and have solved around 120 aptitude and logical reasoning problems. I'm currently working on my first project in AI/ML domain.</p>
+                    <p>My career objective is to grow into an industry-ready AI engineer and contribute to innovative solutions in the field of artificial intelligence.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AI/ML Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python (Basics)</li>
+                        <li>C (Basics)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-brain"></i> Core Concepts</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning Fundamentals</li>
+                        <li>Problem Solving</li>
+                        <li>Data Analysis Basics</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Git (Basics)</li>
+                        <li>Google Colab</li>
+                        <li>AI Tools (ChatGPT, Gemini, Perplexity)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-paint-brush"></i> Design Skills</h3>
+                    <ul class="skill-list">
+                        <li>UI/UX Design (Basics)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Problem-solving</li>
+                        <li>Willingness to learn</li>
+                        <li>Team collaboration</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-certificate"></i> Certification</h3>
+                    <ul class="skill-list">
+                        <li>NPTEL - Problem Solving Through Programming in C</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>B.Tech in AI & ML</h3>
+                        <div class="date">2023 - 2028 (Expected)</div>
+                        <p>Bannari Amman Institute of Technology, Sathyamangalam</p>
+                        <p>Current CGPA: 7.6</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Higher Secondary (12th)</h3>
+                        <div class="date">2022 - 2023</div>
+                        <p>J.K.K. Nattraja Matric Hr. Sec. School</p>
+                        <p>Percentage: 91.67%</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Secondary School (10th)</h3>
+                        <div class="date">2020 - 2021</div>
+                        <p>J.K.K. Nattraja Matric Hr. Sec. School</p>
+                        <p>Percentage: 90.6%</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Hackathon Participation</h3>
+                        <div class="date">2023</div>
+                        <p>Participated in Smart India Hackathon (SIH)</p>
+                        <p>Gained experience in team collaboration and problem-solving under time constraints.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Status -->
+            <div class="project-status">
+                <h3>Current Project Status</h3>
+                <p>I'm currently working on my first AI/ML project. The project is in progress and I'm learning through the implementation process.</p>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <p>Project completion: 60% (In Progress)</p>
+            </div>
+            
+            <!-- Dream Companies -->
+            <div style="margin-top: 60px;">
+                <h3 class="section-title">Target Companies</h3>
+                <div class="companies-list">
+                    <div class="company">Google</div>
+                    <div class="company">Amazon</div>
+                    <div class="company">Microsoft</div>
+                    <div class="company">TCS</div>
+                    <div class="company">Deloitte</div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: #7f8c8d;">Expected Annual Package: ₹8–12 LPA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> 9003856009</li>
+                        <li><i class="fas fa-envelope"></i> smonikasenthilkumar28@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 10/3-10A Bangalaw street Thevur</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;">Online Profiles</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/monika-senthilkumar-086523326" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Monika280803" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://leetcode.com/u/lgCdUTHzAJ/" target="_blank"><i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Declaration</h3>
+                    <p>I hereby declare that the information provided in this portfolio is true and accurate to the best of my knowledge.</p>
+                    
+                    <h3 style="margin-top: 30px;">Professional Communication</h3>
+                    <p>My current communication level is basic. I'm actively working on improving clarity and technical explanation skills through practice and feedback.</p>
+                    
+                    <h3 style="margin-top: 30px;">Career Goal</h3>
+                    <p>To secure an AI/ML engineering role where I can apply my skills in Python, C, and machine learning fundamentals to build intelligent solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="color: white; margin-bottom: 20px;">MONIKA <span style="color: #3498db;">S</span></div>
+                <p>AI/ML Engineering Student | Problem Solver | Aspiring AI Engineer</p>
+                <div class="copyright">
+                    &copy; 2023 Monika Senthilkumar. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
